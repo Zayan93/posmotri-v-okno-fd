@@ -8,6 +8,25 @@ html {
   block-size: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 .page {
   display: flex;
   inline-size: 1200px;
@@ -48,7 +67,8 @@ html {
 
 .content__list-container {
   position: relative;
-  height: 534px;
+  height: 298px;
+  width: 399px;
   overflow: auto;
 }
 
@@ -59,7 +79,7 @@ html {
   font-style: normal;
   line-height: 94%;
   text-transform: uppercase;
-  word-spacing: 0%;
+  word-spacing: -0.009em;
 }
 
 .content__accent {
@@ -86,7 +106,6 @@ html {
   width: 100%;
   aspect-ratio: 16 / 9;
   background-color: black;
-  position: relative;
 }
 
 .result__video {
@@ -113,8 +132,9 @@ html {
 }
 
 .search-form__fieldset-title {
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
+  line-height: 100%;
 }
 
 .search-form__label {
@@ -169,14 +189,6 @@ html {
   text-align: left;
 }
 
-.search-form__fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 
 .search-form__checkbox-list {
   display: flex;
@@ -336,14 +348,12 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   margin-block-end: 5px;
   line-height: 16.2px;
-  line-clamp: 1;
+  line-clamp: 3;
   text-align: left;
   text-decoration-skip-ink: none;
-  -webkit-line-clamp: 1;
-  white-space: nowrap;          /* Не переносим строки */
-  overflow: hidden;             /*  лишнее скрываем */
+  -webkit-line-clamp: 3;     
+  overflow: hidden;
   text-overflow: ellipsis;
-  
 }
 
 .content__video-card-thumbnail {
@@ -358,24 +368,7 @@ html {
   margin-block: 30px 6px;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
 
-ul,
-ol {
-  list-style: none;
-}
 
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
