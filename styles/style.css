@@ -9,6 +9,7 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +17,345 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 711px 399px;
+  grid-template-rows: auto;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas: "result content__details";
+  column-gap: 30px;
+  max-width: 1140px;
+  padding-top: 133px;
+}
+
+/* Основные элементы которые являются грид-ячейками */
+
+/* Контейнеры для details */
+.content__details {
+  display: flex;
+  flex-direction: column;
+  grid-area: content__details;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  gap: 26px;
+}
+
+.content__list-container {
+  position: relative;
+  height: 534px;
+  overflow: auto;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  font-style: normal;
+  line-height: 94%;
+  text-transform: uppercase;
+  word-spacing: 0%;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* Контейнеры для result */
+.result {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 16px;
+  align-items: start;
+  grid-area: result;
+}
+
+.result__video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: black;
+  position: relative;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 225px min-content auto;
+  gap: 20px 40px;
+  align-items: end;
+  width: 100%;
+}
+
+.search-form__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-form__fieldset-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.search-form__label:has([type="checkbox"]):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.search-form__label:has([type="checkbox"]):active {
+  text-decoration: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+.search-form__label-text {
+  font-size: 16px;
+}
+
+
+.search-form__textfield {
+  padding: 10px;
+  background-color: #1b1919;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  width: 100%;
+}
+
+.search-form__textfield:active {
+  border: 1px solid transparent;
+}
+
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 22px;
+  text-align: left;
+}
+
+.search-form__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 20px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline-end: 5px;
+  border: 1px solid;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  background-color: #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  background-color: currentColor;
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+.search-form__submit-button {
+  justify-self: end; /* Выравнивает кнопку по правому краю */
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #1b1919;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+.button {
+  min-width: 195px;
+  min-height: 32px;
+  border: 1px solid currentColor;
+  color: var(--text-color);
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  background-color: transparent;
+  transition: background-color 0.6s;
+  cursor: pointer;
+}
+
+.button:active {
+  text-decoration: none;
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+/* Контейнеры участвующие в template */
+
+.content__list-item {
+  padding-inline: 3px;
+}
+
+.content__card-link {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+
+.content__card-link:active {
+  text-decoration: none;
+}
+
+.content__card-link:focus,
+.content__card-link:focus-visible {
+  outline: none;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.content__card-link:active .content__video-card,
+.content__card-link_current .content__video-card {
+  background-color: #545050;
+}
+
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 196px;
+  overflow: hidden;
+}
+
+.content__card-link:focus-visible .content__video-card {
+  outline: 1px solid currentColor;
+}
+
+.content__video-card-title {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Oswald", sans-serif;
+  margin-block-end: 5px;
+  line-height: 100%;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  text-transform: uppercase;
+  white-space: nowrap;          /* Не переносим строки */
+  overflow: hidden;             /*  лишнее скрываем */
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Fira Sans Condensed", sans-serif;
+  margin-block-end: 5px;
+  line-height: 16.2px;
+  line-clamp: 1;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  -webkit-line-clamp: 1;
+  white-space: nowrap;          /* Не переносим строки */
+  overflow: hidden;             /*  лишнее скрываем */
+  text-overflow: ellipsis;
+  
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.more-button {
+  min-width: 99.2%;
+  margin-block: 30px 6px;
 }
 
 h1,
