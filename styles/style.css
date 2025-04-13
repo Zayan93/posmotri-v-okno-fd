@@ -29,9 +29,11 @@ ol {
 
 .page {
   display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
-  margin: auto;
+  margin: 0 auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -43,13 +45,13 @@ ol {
   grid-template-columns: 711px 399px;
   grid-template-rows: auto;
   align-content: center;
-  justify-content: center;
   align-items: center;
-  justify-items: center;
+  margin: 0 auto;
   grid-template-areas: "result content__details";
   column-gap: 30px;
   max-width: 1140px;
-  padding-top: 133px;
+  padding-top: 3px;
+  
 }
 
 /* Основные элементы которые являются грид-ячейками */
@@ -63,23 +65,22 @@ ol {
   height: 100%;
   align-items: flex-start;
   gap: 26px;
+  margin-top: 100px;
 }
 
 .content__list-container {
   position: relative;
   height: 298px;
-  width: 399px;
   overflow: auto;
 }
 
 .title {
-  font-family: "Oswald", sans-serif;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   font-style: normal;
   line-height: 94%;
   text-transform: uppercase;
-  word-spacing: -0.009em;
 }
 
 .content__accent {
@@ -89,23 +90,23 @@ ol {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 30px;
 }
 
 /* Контейнеры для result */
 .result {
   display: grid;
   grid-template-rows: auto 1fr;
-  row-gap: 16px;
+  row-gap: 15px;
   align-items: start;
   grid-area: result;
+  padding-top: 130px;
 }
 
 .result__video-container {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-color: black;
+  height: 386px;
+  width: 711px;
 }
 
 .result__video {
@@ -117,32 +118,30 @@ ol {
 .search-form {
   display: grid;
   grid-template-columns: 225px min-content auto;
-  gap: 20px 40px;
-  align-items: end;
+  gap: 20px 41px;
+  align-items: stretch;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .search-form__fieldset {
   border: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .search-form__fieldset-title {
-  font-weight: 400;
+  
   font-size: 18px;
-  line-height: 100%;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
 }
 
 .search-form__label {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+  align-items:center;
   width: fit-content;
+  cursor: pointer;
 }
 
 .search-form__label:has([type="checkbox"]):hover {
@@ -161,18 +160,22 @@ ol {
 }
 
 .search-form__label-text {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
 .search-form__textfield {
-  padding: 10px;
-  background-color: #1b1919;
-  border: 1px solid #fff;
+  background-color: inherit;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   color: #fff;
   font-family: inherit;
-  font-size: 16px;
-  width: 100%;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  min-width: 225px;
+  appearance: none;
 }
 
 .search-form__textfield:active {
@@ -183,7 +186,7 @@ ol {
   color: rgba(255, 255, 255, 0.7);
   font-family: inherit;
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;
   font-style: normal;
   line-height: 22px;
   text-align: left;
@@ -192,7 +195,8 @@ ol {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  margin-bottom: 36px;
 }
 
 .search-form__pseudo-checkbox {
@@ -205,9 +209,6 @@ ol {
   block-size: 19px;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox {
-  background-color: #fff;
-}
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
@@ -217,14 +218,7 @@ ol {
 }
 
 .search-form__submit-button {
-  justify-self: end; /* Выравнивает кнопку по правому краю */
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #1b1919;
-  border: none;
-  font-family: inherit;
-  font-size: 16px;
-  cursor: pointer;
+  align-self: end;
 }
 
 
@@ -239,19 +233,20 @@ ol {
 } 
 
 .button {
-  min-width: 195px;
-  min-height: 32px;
-  border: 1px solid currentColor;
-  color: var(--text-color);
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 700;
+  color: inherit;
+  font-family: inherit;
   font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  background-color: transparent;
-  transition: background-color 0.6s;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: inherit;
+  border: 1px solid #fff;
+  height: 34px;
   cursor: pointer;
+  margin-bottom: 33px;
 }
+
+
 
 .button:active {
   text-decoration: none;
@@ -351,8 +346,7 @@ ol {
   line-clamp: 3;
   text-align: left;
   text-decoration-skip-ink: none;
-  -webkit-line-clamp: 3;     
-  overflow: hidden;
+  -webkit-line-clamp: 3;
   text-overflow: ellipsis;
 }
 
